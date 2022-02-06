@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Courgette&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap');
+
+header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  font-size: 18px;
+  font-family: 'Courgette';
+
+  height: 10vh;
+
+
+  & > h2:first-child{
+    margin-left: 6em;
+  }
+
+  & > h2:last-child {
+    margin-right: 6em;
+    cursor: pointer;
+  }
+}
