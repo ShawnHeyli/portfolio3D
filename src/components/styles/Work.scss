@@ -1,0 +1,30 @@
+$aspectRatio: 4/3;
+$cardWidth: 480px;
+$cardHeight: $cardWidth * $aspectRatio;
+
+.work {
+	text-decoration: none;
+
+	background-size: cover;
+	background-position: center;
+
+	border: 1px white solid;
+
+	height: $cardHeight;
+	width: $cardWidth;
+
+	div {
+		width: max-content;
+
+		background-color: white;
+		border-radius: 2rem;
+
+		padding: 1rem;
+		margin: 1rem 1rem 0 auto;
+
+		p {
+			color: black;
+			font-size: 24px;
+		}
+	}
+}

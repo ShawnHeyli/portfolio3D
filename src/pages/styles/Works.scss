@@ -1,0 +1,13 @@
+$aspectRatio: 4/3;
+$cardWidth: 480px;
+$cardHeight: $cardWidth * $aspectRatio;
+
+.works {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, $cardWidth);
+	grid-template-rows: repeat(auto-fit, $cardHeight);
+  justify-content: space-around;
+
+	gap: 1em;
+	margin: 1em;
+}
