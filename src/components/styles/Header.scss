@@ -1,0 +1,28 @@
+@import 'Theme.scss';
+@import url('https://fonts.googleapis.com/css2?family=Sriracha&display=swap');
+
+header {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 4em;
+
+  background-color: $bg;
+  border-bottom: 1px solid $black;
+
+	height: 4em;
+
+	.navLink {
+    transition: all 200ms ease-in;
+
+		font: bold 2em 'Sriracha';
+		text-decoration: none;
+    color: $fg;
+
+    &:hover{
+      transition: all 200ms ease-out;
+      color: $orange;
+
+    }
+	}
+}
