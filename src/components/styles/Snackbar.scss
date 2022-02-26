@@ -1,0 +1,31 @@
+@import 'Theme.scss';
+
+.snackbar {
+	position: fixed;
+	left: 5%;
+	bottom: 5%;
+
+	background: white;
+
+	width: 350px;
+	height: 60px;
+
+	border-radius: 1em;
+	z-index: 1000;
+
+	font: bold 1.2em 'Cormoran';
+
+	display: flex;
+	justify-content: left;
+	align-items: center;
+	text-align: center;
+
+	.symbol {
+		margin: 0 1em;
+	}
+
+	.message {
+		text-align: start;
+		font-weight: bold;
+	}
+}
