@@ -4,78 +4,87 @@
 @import url('https://fonts.googleapis.com/css2?family=Sriracha&display=swap');
 
 .contact {
-  display: flex;
-  justify-content: right;
-  align-items: center;
+	display: grid;
+	grid-template-columns: repeat(6, 1fr);
+	grid-template-rows: 30% 70%;
 
-  background-color: $bg;
+	height: sizeIncludingBorderAndHeader('vh');
+	width: sizeIncludingBorder('vw');
 
-  height: calc(100vh - 4em);
+	.title {
+		grid-column: 2 / span 4;
 
-  overflow: hidden;
+		display: flex;
+		text-align: center;
+		justify-content: center;
+		align-items: center;
 
-  .title{
-    flex-basis: 35%;
-    height: 100%;
+		font: 6em 'Cormorant';
+		line-height: 2em;
 
-    display: flex;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
+		border: 1 px $black solid;
+		color: $fg;
+	}
 
-    font: 6em 'Sriracha';
-    line-height: 2em;
+	.contactSection {
+		grid-column: 1 / span 6;
 
-    color: $fg;
-  }
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
 
-  .contactSection {
+		flex-basis: 65%;
+		height: 100%;
 
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr);
+		padding: 0;
+		margin: 0;
 
-    font: 2em 'Sriracha';
+		div {
+			transition-property: border, background-color;
+			transition-duration: 0.6s;
+			transition-timing-function: ease-out;
 
-    flex-basis: 65%;
-    height: 100%;
+			cursor: pointer;
 
-    a {
-      //transition: all 0.6s ease-out;
-      transition: border 0.6s ease-out;
+			background-color: $bg;
+			color: $fg;
+			text-decoration: none;
 
-      background-color: $bg;
-      border: 1px $black solid;
-      color: $fg;
+			display: flex;
+			flex-direction: column;
+			justify-content: end;
 
-      display: flex;
-      flex-direction: column;
-      justify-content: end;
+			&:hover {
+				transition-property: border, background-color;
+				transition-duration: 0.2s;
+				transition-timing-function: ease-out;
 
-      &:hover {
-        //transition: all 0.2s ease-out;
-        transition: border 0.2s ease-out;
+				background-color: $fg;
+				color: $bg;
 
-        border: 4px $bg solid;
-        background-color: $fg;
-        color: $bg;
+				& svg {
+					transition: all 0.2s ease-out;
 
-        & svg {
-          transition: all 0.2s ease-out;
+					filter: invert(87%) sepia(30%) saturate(246%) hue-rotate(4deg)
+						brightness(96%) contrast(93%);
+				}
+			}
 
-          filter: invert(87%) sepia(30%) saturate(246%) hue-rotate(4deg) brightness(96%) contrast(93%);
-        }
-      }
+			svg {
+				transition: all 0.6s ease-out;
+				margin-left: 1em;
+			}
 
-      svg {
-        transition: all 0.6s ease-out;
-        margin-left: 1em;
-      }
+			h3 {
+				font: italic bold 2em 'Cormoran';
+				text-decoration: underline 2px;
+				margin: 0 0 0 1rem;
+			}
 
-      p {
-        margin-left: 1em;
-        margin-bottom: 1em;
-      }
-    }
-  }
+			p {
+				font: 1em 'Cormoran';
+				text-decoration: none;
+				margin: 0 0 1em 1rem;
+			}
+		}
+	}
 }
