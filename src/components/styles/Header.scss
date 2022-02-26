@@ -1,28 +1,44 @@
 @import 'Theme.scss';
-@import url('https://fonts.googleapis.com/css2?family=Sriracha&display=swap');
+
+$widthIncludingBorder: calc(100vw - 4em);
 
 header {
 	display: flex;
-	justify-content: center;
+	justify-content: space-around;
 	align-items: center;
-	gap: 4em;
 
-  background-color: $bg;
-  border-bottom: 1px solid $black;
-
+	width: $widthIncludingBorder;
 	height: 4em;
 
+	.date {
+		font: italic bold 1em 'Cormorant';
+		width: 15%;
+		height: 100%;
+		flex-shrink: 0;
+
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		margin: 0;
+	}
 	.navLink {
-    transition: all 200ms ease-in;
+		font: bold 2em 'Cormorant';
+		width: 30%;
+		height: 100%;
 
-		font: bold 2em 'Sriracha';
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		transition: all 200ms ease-in;
+
 		text-decoration: none;
-    color: $fg;
+		color: $fg;
 
-    &:hover{
-      transition: all 200ms ease-out;
-      color: $orange;
-
-    }
+		&:hover {
+			transition: all 200ms ease-out;
+			color: $orange;
+		}
 	}
 }
