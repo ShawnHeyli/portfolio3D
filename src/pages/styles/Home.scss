@@ -1,0 +1,10 @@
+@import '../../components/styles/Theme.scss';
+
+.home {
+	display: flex;
+	height: sizeIncludingBorderAndHeader('vh');
+
+	article {
+		width: 100%;
+	}
+}
