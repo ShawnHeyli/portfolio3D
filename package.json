@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@react-three/drei": "^8.10.7",
     "@react-three/fiber": "^7.0.26",
     "@tabler/icons": "^1.53.0",
     "framer-motion": "^6.2.4",
