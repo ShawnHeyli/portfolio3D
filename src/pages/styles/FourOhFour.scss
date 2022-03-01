@@ -5,9 +5,20 @@
 
 	height: sizeIncludingBorderAndHeader('vh');
 
+	@include media-min('phone') {
+		height: 100vh;
+		margin-bottom: 3em;
+	}
+
 	article {
 		display: flex;
 		width: 100%;
+
+		@include media-min('phone') {
+			flex-flow: column-reverse nowrap;
+			justify-content: center;
+			align-items: center;
+		}
 
 		.goBack {
 			position: relative;
@@ -15,6 +26,10 @@
 			flex-direction: column;
 
 			margin: auto 0 6em 6em;
+
+			@include media-min('phone') {
+				margin: 0 0 6em 0;
+			}
 
 			img {
 				width: 70%;
