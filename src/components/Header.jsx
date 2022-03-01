@@ -17,8 +17,9 @@ export default function Header(props) {
 
 	const navLinkStyle = ({ isActive }) => {
 		return {
-			textDecoration: isActive ? `line-through 4px ${props.pageColor}` : '',
-			borderLeft: `solid 4px ${props.pageColor}`
+			/* textDecoration: isActive ? `line-through 4px ${props.pageColor}` : '', */
+			borderLeft: `solid 4px ${props.pageColor}`,
+			borderRight: `solid 4px ${props.pageColor}`
 		};
 	};
 
@@ -29,17 +30,20 @@ export default function Header(props) {
 				borderTop: `solid 4px ${props.pageColor}`
 			}}
 		>
-			<p className='date'>
+			<p
+				className='date'
+				style={{ borderRight: `solid 4px ${props.pageColor}` }}
+			>
 				local information :<br />
 				{date}
 			</p>
-			<NavLink className='navLink' to='/contact' style={navLinkStyle}>
+			<NavLink className='navLink' to='/contact'>
 				Contact
 			</NavLink>
 			<NavLink className='navLink' to='/' style={navLinkStyle}>
 				Hilan Meyran
 			</NavLink>
-			<NavLink className='navLink' to='/works' style={navLinkStyle}>
+			<NavLink className='navLink' to='/works'>
 				Works
 			</NavLink>
 		</header>
