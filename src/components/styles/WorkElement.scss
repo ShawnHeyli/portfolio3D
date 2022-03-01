@@ -1,0 +1,21 @@
+@import 'Theme.scss';
+
+.workElement {
+	display: flex;
+
+	height: calc(sizeIncludingBorderAndHeader('vh') / 4);
+	justify-content: left;
+	align-items: flex-end;
+
+	color: $fg;
+	text-decoration: none;
+
+	h2 {
+		font: bold 3em 'Cormoran';
+		margin: auto 0 auto 1em;
+	}
+	p {
+		font: bold italic 1.5em 'Cormoran';
+		margin: 0 1em 1em auto;
+	}
+}

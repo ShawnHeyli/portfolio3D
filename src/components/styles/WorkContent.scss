@@ -1,0 +1,107 @@
+@import 'Theme.scss';
+
+@mixin titleStyle($fontSize) {
+	font: bold $fontSize 'Cormoran';
+	margin: 0.5em auto 0 auto;
+}
+
+.workContent {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	grid-template-rows: repeat(4, calc(sizeIncludingBorderAndHeader('vh') / 4));
+
+	height: sizeIncludingBorderAndHeader('vh');
+	flex-basis: 50%;
+
+	.canvas {
+		grid-column: span 2;
+		grid-row: span 2;
+
+		width: 100%;
+	}
+	.description {
+		grid-row: span 2;
+
+		display: flex;
+		flex-direction: column;
+		h2 {
+			@include titleStyle(2em);
+		}
+		p {
+			margin: 1em;
+		}
+	}
+	.links {
+		display: flex;
+		flex-direction: column;
+
+		flex-shrink: 0;
+		height: calc(sizeIncludingBorderAndHeader('vh') / 4);
+		h2 {
+			@include titleStyle(1.5em);
+		}
+
+		ul {
+			display: flex;
+			flex-wrap: wrap;
+
+			margin: 0 1em;
+			padding: 0;
+			height: 100%;
+			a {
+				flex-basis: 50%;
+
+				display: flex;
+				justify-content: left;
+
+				height: max-content;
+				width: max-content;
+
+				margin: 0.5em 0;
+
+				color: $fg;
+
+				font: bold italic 1.2em 'Cormoran';
+				text-decoration: underline;
+				p {
+					margin: 0;
+				}
+			}
+		}
+	}
+	.languages {
+		display: flex;
+		flex-direction: column;
+
+		flex-shrink: 0;
+		height: calc(sizeIncludingBorderAndHeader('vh') / 4);
+		h2 {
+			@include titleStyle(1.5em);
+		}
+
+		ul {
+			display: flex;
+			flex-wrap: wrap;
+
+			margin: 0 1em;
+			padding: 0;
+			height: 100%;
+			div {
+				flex-basis: 50%;
+
+				display: flex;
+				justify-content: left;
+				align-items: center;
+
+				margin: 0.5em 0;
+
+				color: $fg;
+
+				font: bold italic 1.2em 'Cormoran';
+				p {
+					margin: 0;
+				}
+			}
+		}
+	}
+}
