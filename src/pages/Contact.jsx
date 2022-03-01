@@ -10,6 +10,9 @@ import { useState } from 'react';
 import Snackbar from '../components/Snackbar';
 
 export default function Contact({ pageColor }) {
+	const isPhone = window.matchMedia('(max-width: 500px)').matches;
+	console.log(isPhone);
+
 	const card = {
 		beginning: { opacity: 0, x: 120 },
 		final: { opacity: 1, x: 0 },
@@ -29,11 +32,28 @@ export default function Contact({ pageColor }) {
 		borderBottom: `solid 4px ${pageColor}`
 	};
 
+	const titleStyle = {
+		borderBottom: `solid 4px ${pageColor}`,
+		borderLeft: isPhone ? '' : `solid 4px ${pageColor}`,
+		borderRight: isPhone ? '' : `solid 4px ${pageColor}`
+	};
+
+	const contactStyle = isPhone
+		? {
+				borderTop: `solid 4px ${pageColor}`,
+				borderBottom: `solid 4px ${pageColor}`
+		  }
+		: {
+				borderLeft: `solid 4px ${pageColor}`,
+				borderRight: `solid 4px ${pageColor}`
+		  };
+
+	console.log(contactStyle);
 	const [snackbarOpen, setSnackbarOpen] = useState(false);
 	const openSnackbar = () => setSnackbarOpen(true);
 	const closeSnackbar = () => setSnackbarOpen(false);
 
-	const handleOnClick = (textToCopy) => {
+	const handleClick = (textToCopy) => {
 		/* navigator.clipboard.writeText(textToCopy); */
 		openSnackbar();
 		console.log('clicked');
@@ -66,25 +86,19 @@ export default function Contact({ pageColor }) {
 					animate='final'
 					className='contact'
 				>
-					<div className='filler' style={fillerStyle} />
-					<motion.section
-						className='title'
-						variants={title}
-						style={{
-							borderBottom: `solid 4px ${pageColor}`,
-							borderLeft: `solid 4px ${pageColor}`,
-							borderRight: `solid 4px ${pageColor}`
-						}}
-					>
-						<h1>CONTACT ME</h1>
-					</motion.section>
-					<div className='filler' style={fillerStyle} />
+					<div>
+						<div className='filler' style={fillerStyle} />
+						<motion.h1 className='title' variants={title} style={titleStyle}>
+							CONTACT ME
+						</motion.h1>
+						<div className='filler' style={fillerStyle} />
+					</div>
 					<section className='contactSection'>
 						<motion.div
 							href='https://fr.linkedin.com/in/hilan-meyran-448868220'
 							variants={card}
 							onClick={() => {
-								handleOnClick(
+								handleClick(
 									'https://fr.linkedin.com/in/hilan-meyran-448868220'
 								);
 							}}
@@ -97,12 +111,9 @@ export default function Contact({ pageColor }) {
 						<motion.div
 							href='/'
 							variants={card}
-							style={{
-								borderRight: `solid 4px ${pageColor}`,
-								borderLeft: `solid 4px ${pageColor}`
-							}}
+							style={contactStyle}
 							onClick={() => {
-								handleOnClick('06.78.55.61.82');
+								handleClick('06.78.55.61.82');
 							}}
 						>
 							<IconDeviceMobileMessage size={48} color='#282828' />
@@ -114,7 +125,7 @@ export default function Contact({ pageColor }) {
 							href='mailto:hilanmeyran@protonmail.com'
 							variants={card}
 							onClick={() => {
-								handleOnClick('hilanmeyran@protonmail.com');
+								handleClick('hilanmeyran@protonmail.com');
 							}}
 						>
 							<IconMailForward size={48} color='#282828' />
